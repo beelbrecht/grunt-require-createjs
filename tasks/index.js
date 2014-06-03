@@ -24,7 +24,7 @@ module.exports = function (grunt) {
       var ojs = grunt.file.read(src);
 
       try {
-        rjs = ojs.replace(/\(function.*?\{([\w\W]*)\}\)\([\w\W]*/g, 'define([], function(){\nvar lib, img = images||{}, cjs = createjs;$1return lib;\n});');
+        rjs = ojs.replace(/\(function.*?\{([\w\W]*)\}\)\([\w\W]*/g, 'define([], function(){\nvar lib = {}, img = (window.images ? window.images : window.images = {}), cjs = createjs;$1return lib;\n});');//.replace(/\{src:\"/g, '{src:"' + file.dest + '/');
       } catch (err) {
         return grunt.warn(file.src + '\n' + err);
       }
