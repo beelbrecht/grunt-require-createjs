@@ -24,7 +24,7 @@ module.exports = function (grunt) {
       var ojs = grunt.file.read(src);
 
       try {
-        rjs = ojs.replace(/\(function.*?\{([\w\W]*)\}\)\([\w\W]*/g, 'define([], function(){\nvar lib = {}, img = (window.images ? window.images : window.images = {}), cjs = createjs;$1return lib;\n});');//.replace(/\{src:\"/g, '{src:"' + file.dest + '/');
+        rjs = ojs.replace(/\(function.*?\{([\w\W]*)\}\)\([\w\W]*/g, 'define([], function(){\nvar elem = document.createElement("canvas"),canvasSupported = !!(elem.getContext && elem.getContext("2d"));\nif (!canvasSupported){return;}\nvar lib = {}, img = (window.images ? window.images : window.images = {}), cjs = (window.createjs ? window.createjs : window.createjs = {});$1return lib;\n});');//.replace(/\{src:\"/g, '{src:"' + file.dest + '/');
       } catch (err) {
         return grunt.warn(file.src + '\n' + err);
       }
