@@ -1,7 +1,7 @@
 {
   "name": "grunt-require-createjs",
   "description": "Convert the js file generate by createjs to use requirejs.",
-  "version": "0.6.1",
+  "version": "0.6.2",
   "author": {
     "name": "Chrislearn",
     "url": "http://chrislearn.im/"
@@ -51,6 +51,6 @@
     "url": "https://github.com/chrislearn/grunt-require-createjs/issues"
   },
   "homepage": "https://github.com/chrislearn/grunt-require-createjs",
-  "_id": "grunt-require-createjs@0.6.1",
+  "_id": "grunt-require-createjs@0.6.2",
   "_from": "grunt-require-createjs@latest"
 }
